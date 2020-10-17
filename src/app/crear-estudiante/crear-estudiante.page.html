@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>crearEstudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <iom-item>
+      <ion-label>Todo</ion-label>
+      <ion-input>
+        name="nombre"
+        type="text"
+        [(ngModel)]="estudiante.nombre"
+        name="title"
+      </ion-input>
+    </iom-item>
+    <ion-item>
+      <ion-label>Curso</ion-label>
+      <ion-select>
+        name="curso"
+        placeholder="Seleccione un curso"
+        [(ngModel)]="estudiante.cursoId"
+        <ion-select-option *ngFor="let curso of cursos" [value]="curso.id">
+          {{ curso.nombre }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="primary" expand="block" (click)="crearEstudiante()">Crear</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="secondary" expand="block" (click)="cancelar()">Cancelar</ion-button>
+        </ion-col> 
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -10,6 +10,18 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'crear-estudiante',
+    loadChildren: () => import('./crear-estudiante/crear-estudiante.module').then( m => m.CrearEstudiantePageModule)
+  },
+  {
+    path: 'estudiantes',
+    loadChildren: () => import('./estudiantes/estudiantes.module').then( m => m.EstudiantesPageModule)
+  },
+  {
+    path: 'editar-estudiante',
+    loadChildren: () => import('./editar-estudiante/editar-estudiante.module').then( m => m.EditarEstudiantePageModule)
   }
 ];
 
